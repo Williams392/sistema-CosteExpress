@@ -1,0 +1,84 @@
+
+<div class="container" style="padding: 0px;">
+
+    <div class="Breadcrumb bg-white rounded">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <i class="bi bi-house p-2"></i>
+            <li class="breadcrumb-item p-2"><a href="crucero/admin/Inicio">Inicio</a></li>
+            <li class="breadcrumb-item active p-2" aria-current="page">Crer Ruta</li>
+          </ol>
+        </nav>
+    </div>
+
+    <div class="bg-white ">
+        <div style="display: flex; align-items: center; padding: 10px;">
+            <i class="bi bi-bus-front" style="font-size: 25px;"></i>
+            <p style="font-size: 24px; line-height: 1.2; margin: 0 0 0 10px;">Registrar de Viaje</p>
+        </div>  
+        <hr>
+    </div>
+
+    <div class="container bg-white">
+        <form (ngSubmit)="onSubmit()" #tipoServicioForm="ngForm" style="padding: 15px;">
+            <div style="display: flex; flex-wrap: wrap;">
+                <!-- Primera columna -->
+                <div style="flex: 1; padding-right: 10px;">
+                    <div class="mb-3">
+                        <label for="nombreTipoServicio" class="form-label">Destino</label>
+                        <input type="text" class="form-control" id="nombreTipoServicio" required [(ngModel)]="tipoSer.nombre" name="nombreTipoServicio">
+                    </div>
+                </div>
+                <!-- Segunda columna -->
+                <div style="flex: 1; padding-left: 10px;">
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="precio" required [(ngModel)]="tipoSer.precio" name="precio">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                <button class="text-center full-width ml10" style="padding: 20px;" mat-raised-button color="primary">Registrar</button>
+                <button class="full-width ml10" type="reset" style = "padding: 20px;" mat-raised-button color="accent" (click)="cancelar()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container bg-white">
+        <!-- Tabla para mostrar la lista de tipos de servicio -->
+  
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Estado</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tipoServicio of tipoServicios">
+                    <td>{{ tipoServicio.nombre }}</td>
+                    <td>{{ tipoServicio.precio }}</td>
+                    <td scope="row" class="text-center">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" [(ngModel)]="tipoServicio.estado" (change)="actualizarEstado(tipoServicio)">
+                        </div>
+                    </td>
+                    <td>
+                        <button 
+                        class="btn btn-warning btn-sm me-3" mat-flat-button style="border: 1px solid;">Editar</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" matInput mat-flat-button color="accent" (click)="setTipoServicioToDelete(tipoServicio.idTipoServicio)" data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <tr></tr>
+    </div>
+    
+
+</div>

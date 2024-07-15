@@ -1,0 +1,57 @@
+<app-header-component></app-header-component>
+
+<body>
+  <div class="content">
+
+    <br>
+    
+    <div class="max-w-sm mx-auto border border-border bg-muted p-4 rounded-md">
+      <div class="text-center font-bold text-card-foreground mb-2">Ida</div>
+      <div class="flex justify-center items-center space-x-2 text-card-foreground">
+        <span>{{ itinerarios[0].origen }}</span>
+        <span class="text-primary">→</span>
+        <span>{{ itinerarios[0].destino }}</span>
+      </div>
+      <div class="text-center font-bold text-card-foreground mb-2 p-2">Fecha Viaje</div>
+      <div class="flex justify-center items-center mt-2 text-muted-foreground">
+        <img aria-hidden="true" alt="calendar-icon" src="https://openui.fly.dev/openui/16x16.svg?text=📅" class="mr-1" />
+        <span>{{ itinerarios[0].fecha_viaje }}</span>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto my-4">
+      <div *ngFor="let itinerario of itinerarios" class="dark:bg-background p-4 rounded-lg shadow-md mb-4 border-4 dark:border-destructive">
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="font-bold">Servicio</p>
+            <div class="flex items-center mt-2">
+              <div class="mr-4">
+                <p class="font-semibold">Embarque</p>
+                <p class="text-2xl font-bold">{{ itinerario.horaSalida }}</p>
+              </div>
+              <div class="text-2xl font-bold text-red-500">→</div>
+              <div class="ml-4">
+                <p class="font-semibold">Desembarque</p>
+                <p class="text-2xl font-bold">{{ itinerario.horaRetorno }}</p>
+              </div>
+            </div>
+            <div class="flex items-center mt-2 text-sm">
+              <!-- Detalles adicionales -->
+            </div>
+          </div>
+          <div class="text-right">
+            <p class="font-bold text-center">Precio:</p>
+            <p class="text-3xl font-bold text-center">S/ {{ itinerario.precio }}</p>
+            <button (click)="seleccionarItinerario(itinerario)" matInput mat-raised-button color="accent">Seleccionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <app-footer-component></app-footer-component>
+    
+</body>
+
+

@@ -1,0 +1,176 @@
+
+<app-header-component></app-header-component>
+
+<div class="relative">
+  <img src="https://scontent.flim28-1.fna.fbcdn.net/v/t31.18172-8/12771944_481146505421472_8270715146531577617_o.jpg?_nc_cat=107&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeGj_y-nPGqc9EExyR_O40YsLc3tznnLs7otze3OecuzuuQ526nWSLOAHZtvIBNG_QMXnMsNB-qlT6aRUPLKQ8W_&_nc_ohc=EZQNZjxP7AUQ7kNvgHSm7wd&_nc_ht=scontent.flim28-1.fna&oh=00_AYBGpGPHz6b-aSja6z_BvWQQgoa747Yv3C-HBXZV6oK7zQ&oe=66A7EC6E"
+  alt="imgInicio" class="w-full h-auto object-cover" />
+  <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+    <div class="flex justify-center items-center bg-card p-4 rounded-lg shadow-lg">
+
+
+      <div class="flex space-x-4 items-center">
+
+        <!-- Primera -->
+        <div class="relative custom-width">
+          <select class="appearance-none bg-white p-2 rounded-lg shadow w-full focus:outline-none" [(ngModel)]="origen">
+            <option value="" selected disabled>Origen</option>
+            <option value="Lima">Lima</option>
+            <!-- <option value="Trujillo">Trujillo</option>
+            <option value="Chimbote">Chimbote</option> -->
+          </select>
+          <img aria-hidden="true" alt="location-pin" src="https://openui.fly.dev/openui/24x24.svg?text=📍" class="absolute right-2 top-1/2 transform -translate-y-1/2" />
+        </div>
+      
+         <!-- Segunda -->
+        <div class="relative custom-width">
+          <select class="appearance-none bg-white p-2 rounded-lg shadow w-full focus:outline-none" [(ngModel)]="destino">
+            <option value="" selected disabled>Destino</option>
+            <option value="Trujillo">Trujillo</option>
+            <option value="Chimbote">Chimbote</option>
+          </select>
+          <img aria-hidden="true" alt="location-pin" src="https://openui.fly.dev/openui/24x24.svg?text=📍" class="absolute right-2 top-1/2 transform -translate-y-1/2" />
+        </div>
+      
+         <!-- Fecha Ida -->
+        <div class="relative custom-width">
+          <input type="date" class="appearance-none bg-white p-2 rounded-lg shadow w-full focus:outline-none" placeholder="Salida" [(ngModel)]="fechaViaje" />
+        </div>
+
+        <div class="relative custom-width">
+          <button class="text-center custom-button w-full bg-gold p-2 rounded-lg shadow focus:outline-none" (click)="buscarItinerarios()">
+            BUSCAR
+          </button>
+        </div>
+
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+</head>
+
+
+<div>
+
+  <!-- <div class="flex flex-col items-center" style="height: 20vh;"> -->
+  <div class="flex flex-col items-center">
+    
+    <div class="flex justify-center space-x-8" style="padding: 50px;">
+      <div class="flex flex-col items-center">
+        <div class="bg-blue-300 rounded-full p-14">
+          <img aria-hidden="true" alt="location-icon" src="https://openui.fly.dev/openui/48x48.svg?text=📍" />
+        </div>
+        <p class="mt-4 text-center" >Varios destinos</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="bg-blue-300 rounded-full p-14">
+          <img aria-hidden="true" alt="peru-icon" src="https://openui.fly.dev/openui/48x48.svg?text=🇵🇪" />
+        </div>
+        <p class="mt-4 text-center">Empresa Peruana</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="bg-blue-300 rounded-full p-14">
+          <img aria-hidden="true" alt="shield-icon" src="https://openui.fly.dev/openui/48x48.svg?text=🛡️" />
+        </div>
+        <p class="mt-4 text-center">Buses 100% seguros</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="bg-blue-300 rounded-full p-14">
+          <img aria-hidden="true" alt="seat-icon" src="https://openui.fly.dev/openui/48x48.svg?text=💺" />
+        </div>
+        <p class="mt-4 text-center">Asientos Comodos</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="bg-blue-300 rounded-full p-14">
+          <img aria-hidden="true" alt="users-icon" src="https://openui.fly.dev/openui/48x48.svg?text=👥" />
+        </div>
+        <p class="mt-4 text-alaing-center">Más de 8 Millones de Usuarios</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="bg-background py-10">
+
+    <div>
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-foreground" style="font-size: 42px; font-weight: bolder;color: rgb(233, 64, 97);">DESTINOS FAVORITOS</h2>
+        <p class="text-muted-foreground">Exploremos el Perú</p>
+      </div>
+    
+      <div class="flex justify-center space-x-4 mb-8" style="padding: 10px;">
+        <div class="relative w-25 h-30 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://denomades.s3.us-west-2.amazonaws.com/blog/wp-content/uploads/2020/08/30162219/lima-peru-shutterstock_1047718252.jpg" alt="img1" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white font-bold text-center py-2">Lima</div>
+        </div>
+        <div class="relative w-25 h-30 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://reportelobby.info/wp-content/uploads/2023/01/centro-turistico-ejemplos-10-10.jpg" alt="img2" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white font-bold text-center py-2">Piura</div>
+        </div>
+        <div class="relative w-25 h-30 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://invoyager.com/wp-content/uploads/Machu-Picchu-780x470.jpg" alt="img3" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white font-bold text-center py-2">Cuzco</div>
+        </div>
+        <div class="relative w-25 h-30 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://peru21.pe/resizer/lLj72TVZ52dYVjNmXpevQdb8WKk=/620x0/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/HFBHIPNXNFH55IREHLCKMEWKI4.jpg" alt="img4" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white font-bold text-center py-2">Ancash</div>
+        </div>
+        <div class="relative w-25 h-30 rounded-lg overflow-hidden shadow-lg">
+          <img src="https://www.ceupe.com/images/easyblog_articles/3626/b2ap3_amp_complejo-turstico.jpg" alt="img5" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white font-bold text-center py-2">Loreto</div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button class="full-width" mat-raised-button color="primary">TODOS LOS DESTINOS</button>
+      </div>
+      
+    </div>
+
+    <div>
+      <div class="text-center mb-8" style="margin: 20px;">
+        <h2 class="text-3xl font-bold text-foreground m-6">CONTACTANOS</h2>
+      </div>
+  
+      <div class="flex flex-col  items-center justify-between  p-3rem 3rem 1rem">
+        <div class="mb-6 md:mb-0">
+          <h2 class="text-2xl font-bold text-foreground mb-4 p-3rem">¿Tienes alguna duda?</h2>
+        </div>
+        <div class="flex flex-col items-center md:items-start">
+          <div class="flex space-x-4">
+            
+            <div class="flex flex-col items-center bg-primary rounded-full p-6">
+              <img aria-hidden="true" alt="phone-icon" src="https://openui.fly.dev/openui/48x48.svg?text=📞" class="mb-2" />
+              <span class="text-primary-foreground font-semibold">Telefono</span>
+              <span class="text-primary-foreground">+51959540385</span>
+            </div>
+  
+            <div class="flex flex-col items-center bg-primary rounded-full p-6">
+              <img aria-hidden="true" alt="email-icon" src="https://openui.fly.dev/openui/48x48.svg?text=📧" class="mb-2" />
+              <span class="text-primary-foreground font-semibold">Correo</span>
+              <span class="text-primary-foreground">ElRapiditoTours.com</span>
+            </div>
+            <div class="flex flex-col items-center bg-primary rounded-full p-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-whatsapp mb-2" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+              </svg>
+              <span class="text-primary-foreground font-semibold">WhatsApp</span>
+              <span class="text-primary-foreground">+51959540385</span>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer-component></app-footer-component>

@@ -1,0 +1,37 @@
+
+
+<body>
+
+    <app-header-component></app-header-component>
+
+    <div class="content">
+      <br>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="seats-container">
+              <div *ngFor="let row of seatsLayout" class="seat-row">
+                <div *ngFor="let seat of row" class="seat" [class.selected]="seat.selected" (click)="toggleSeatSelection(seat)">
+                  {{ seat.number }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="summary-container">
+              <h2>Resumen de Asientos</h2>
+              <p>Asientos seleccionados: {{ selectedSeatsCount }}</p>
+              <button class="btn btn-primary" (click)="siguiente()">Siguiente</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     <br>  
+      
+    </div>
+
+    <app-footer-component></app-footer-component>
+
+</body>

@@ -1,0 +1,35 @@
+<app-header-component></app-header-component>
+
+<body>
+  <div class="content"> 
+
+    <div class="relative">
+      <img src="https://www.ctisoluciones.com/sites/default/files/import/article/2018/01/call-center-soluciones.jpg" alt="background image" class="w-full h-96 object-cover background-position-center" />
+    </div>
+    
+    <div class="flex flex-col items-center p-6">
+      <h2 class="text-2xl font-bold mb-4">Contáctanos</h2>
+      <p class="text-center mb-6">
+        Coméntanos como podemos ayudarte, también nos puedes contactar a través de nuestro Fonobus llamándonos al 455-5890 o escribiéndonos a nuestro
+        <a href="#" class="text-blue-500 underline">WhatsApp 987654321</a> donde te atenderemos gustosamente.
+      </p>
+      <div class="bg-card p-6 rounded-lg shadow-lg w-full max-w-xl">
+        <h3 class="text-xl font-bold mb-4 border-b-2 border-blue-500 pb-2">Datos del Usuario</h3>
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Seleccionar motivo" class="border border-input p-2 rounded-md w-full" />
+            <input type="text" placeholder="Nombres y Apellidos" class="border border-input p-2 rounded-md w-full" />
+            <input type="text" placeholder="Teléfono" class="border border-input p-2 rounded-md w-full" />
+            <input type="email" placeholder="Correo" class="border border-input p-2 rounded-md w-full" />
+          </div>
+          <textarea placeholder="Comentario" class="border border-input p-2 rounded-md w-full h-32"></textarea>
+          <button class="full-width2" type="submit" matInput mat-raised-button color="accent">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <app-footer-component></app-footer-component>
+
+</body>
+

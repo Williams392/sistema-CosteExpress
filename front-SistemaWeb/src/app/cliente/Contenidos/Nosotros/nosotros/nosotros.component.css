@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #b22222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #ffffff;
+    display: block;
+    font-weight: 600;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+
+header .logo h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-right: 2px solid #b22222;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #b22222;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav .social {
+    text-align: center;
+}
+
+.sidenav .social p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.sidenav .social a {
+    margin: 0 10px;
+}
+
+.sidenav .contact-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #add8e6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.search-bar {
+    background-color: #f2f2f2;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-bar input, .search-bar button {
+    padding: 10px;
+    border: 1px solid #828181;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    background-color: #4c00ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.about-us, .mission-vision, .values, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.about-us-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 0 20px;
+}
+
+.about-us-content .image img {
+
+
+    width: 500px;
+    height: 300px;
+}
+
+.about-us-content .text{
+    width: 37%;
+}
+
+.mission-vision {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.mission, .vision {
+    width: 37%;
+}
+
+.values-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.value {
+    text-align: center;
+}
+
+.value img {
+    width: 50px;
+    height: 50px;
+}
+
+footer {
+    background-color: #b22222;
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+footer .footer-image img {
+    width: 100%;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .footer-contact .footer-links{
+    justify-content: right;
+}
+footer .footer-links, footer .footer-contact, footer .footer-social {
+    width: 15%;
+    margin: 10px 0;
+}
+
+footer .footer-social h4 {
+    margin-bottom: 10px;
+}
+
+footer .footer-links ul{
+    list-style: none;
+    padding: 50;
+    justify-content: space-around;
+}
+
+footer .footer-links ul li a, footer .footer-social ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .footer-social ul li a img {
+    width: 20px;
+    height: 20px;
+}
+
+/* yo */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex-grow: 1;
+  }

@@ -1,0 +1,88 @@
+<div>
+
+  <div class="Breadcrumb bg-white rounded">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <i class="bi bi-house p-2"></i>
+        <li class="breadcrumb-item p-2"><a href="crucero/admin/Inicio">Inicio</a></li>
+        <li class="breadcrumb-item p-2"><a href="crucero/admin/RegistroViaje">Registro Viaje</a></li>
+        <li class="breadcrumb-item active p-2" aria-current="page">Editar Viaje</li>
+      </ol>
+    </nav>
+  </div>
+    
+  <div class="container bg-white rounded">
+      <br>
+      <div class="container text-center" style="margin: 0px;">
+          <h3>Editar Viaje -dasdasdas</h3>
+      </div>
+    
+      <form #itinerarioForm="ngForm" (ngSubmit)="onSubmit()" #choferForm="ngForm">
+                      
+        <div style="display: flex; flex-wrap: wrap;">
+
+          <!-- Primera columna -->
+          <div style="flex: 1; padding-right: 10px;">
+            <div class="mb-3">
+                <div class="form-group">
+                    <label for="origen" class="form-label">Origen</label>
+                    <input type="text" class="form-control" id="origen" 
+                    required [(ngModel)]="itinerario.origen" name="origen">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="destino" class="form-label">Destino</label>
+                <input type="text" class="form-control" id="destino" required [(ngModel)]="itinerario.destino" name="destino">
+            </div>
+
+            <div class="mb-3">
+                <label for="fecha_viaje" class="form-label">Fecha de Viaje</label>
+                <input type="date" class="form-control" id="fecha_viaje" required [(ngModel)]="itinerario.fecha_viaje" name="fecha_viaje">
+            </div>
+
+            <div class="mb-3">
+                <label for="horaSalida" class="form-label">Hora de Salida</label>
+                <input type="time" class="form-control" id="horaSalida" required [(ngModel)]="itinerario.horaSalida" name="horaSalida">
+            </div>
+
+        </div> 
+        
+        <!-- Segunda columna -->
+        <div style="flex: 1; padding-left: 10px;">
+          <div class="mb-3">
+              <label for="nombreBus" class="form-label">Nombre Bus</label>
+              <select class="form-control" id="nombreBus" required [(ngModel)]="selectedBus" (change)="alCambiarBus($event)" name="nombreBus">
+                  <option *ngFor="let bus of buses" [ngValue]="bus">{{ bus.nombreBus }}</option>
+              </select>
+          </div>
+
+          <div class="mb-3">
+              <label for="asientos" class="form-label">Asientos</label>
+              <input type="number" class="form-control" id="asientos" [(ngModel)]="itinerario.asientos" name="asientos" readonly>
+          </div>
+
+          <div class="mb-3">
+              <label for="horaRetorno" class="form-label">Hora de Retorno</label>
+              <input type="time" class="form-control" id="horaRetorno" required [(ngModel)]="itinerario.horaRetorno" name="horaRetorno">
+          </div>
+
+          <div class="mb-3">
+              <label for="precio" class="form-label">Precio</label>
+              <input type="number" class="form-control" id="precio" required [(ngModel)]="itinerario.precio" name="precio">
+          </div> 
+        </div>
+
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-warning btn-sm me-3" [disabled]="itinerarioForm.invalid">Actualizar</button>
+        <a href="crucero/admin/RegistroViaje" class="btn btn-danger btn-sm" >Regresar</a>   
+      </div>
+    
+      <br>
+    </form>
+    
+  </div>
+      
+</div>

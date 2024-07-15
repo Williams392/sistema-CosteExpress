@@ -1,0 +1,122 @@
+
+<body>
+  <div class="wrapper">
+    <aside id="sidebar" [class.collapsed]="isCollapsed">
+      <div class="h-100">
+
+        <div class="sidebar-logo">
+          <a href="crucero/admin/inicioBus">COSTEÑO EXPRESS</a>
+        </div>
+
+        <ul class="sidebar-nav">
+
+          <li class="sidebar-header">Admin</li>
+    
+          <li class="sidebar-item">
+            <a href="crucero/admin/inicioBus" class="sidebar-link collapsed" data-bs-target="#procesos">
+            <i class="bi bi-person-fill-add pe-2"></i> Inicio</a>
+          </li>
+
+          <!-- <li class="sidebar-item">
+            <a href="crucero/admin/" class="sidebar-link collapsed" data-bs-target="#registros"
+            routerLink="tipoServicio" routerLinkActive="active">
+            <i class="bi bi-bus-front-fill pe-2"></i> Crear Rutas</a>
+          </li> -->
+
+          <li class="sidebar-item">
+            <a href="crucero/admin/" class="sidebar-link collapsed" data-bs-target="#registros"
+            routerLink="RegistroViaje" routerLinkActive="active">
+            <i class="bi bi-bus-front-fill pe-2"></i> Registro Viaje</a>
+          </li>
+    
+          <li class="sidebar-item">
+            <a href="crucero/admin/" class="sidebar-link collapsed" data-bs-target="#registros"
+            routerLink="registroBus" routerLinkActive="active">
+            <i class="bi bi-bus-front-fill pe-2"></i> Registrar Bus</a>
+          </li>
+    
+          <li class="sidebar-item">
+            <a href="crucero/admin/" class="sidebar-link collapsed" data-bs-target="#administrador"
+            routerLink="registrarChofer" routerLinkActive="active">
+            <i class="bi bi-person-fill-add pe-2"></i> Registrar Chofer</a>
+          </li>
+                    
+          <li class="sidebar-item">
+            <a href="crucero/admin/" class="sidebar-link collapsed" data-bs-target="#asignarBus"
+            routerLink="asignarBus" routerLinkActive="active">
+            <i class="bi bi-bus-front-fill pe-2"></i> Asignar Bus</a>
+          </li>
+
+        </ul>
+      </div>
+    </aside>
+  
+    <div class="main">
+            
+      <nav class="navbar navbar-expand px-3 border-bottom">
+
+        <button class="btn" id="sidebar-toggle" type="button">
+          <button class="navbar-toggler-icon" id="sidebar-toggle" (click)="toggleSidebar()"></button>
+        </button>
+
+        <div class="ml-auto" style="font-size: 120%;" >
+          <button class="navbar-toggler-icon" id="salir" type="button" class="page-link" (click)="inicioPAGINA()">
+            <i class="bi bi-door-closed"></i>
+          </button>
+        </div>
+
+      </nav>
+      
+  
+      <main class="content px-3 py-2">
+        <div class="container-fluid">
+  
+          <!-- Table Element -->
+          <!-- <div class="card border-0"> : Esto da el color Blanco. -->
+          <div>
+                        
+            <!-- Nested Views -->
+            <router-outlet></router-outlet>
+                        
+          </div>
+
+        </div>
+      </main>
+
+      <footer class="footer bg-blue-600 text-white p-6">
+        <div class="container mx-auto flex justify-between items-center">
+
+          <div class="text-lg font-bold">
+            <h2>Costeño express SAC</h2>
+          </div>
+
+          <div class="flex space-x-8">
+
+            <div class="space-y-2">
+              <p>Nosotros</p>
+              <p>Promociones</p>
+            </div>
+
+            <div class="space-y-2">
+              <p>Contacto</p>
+              <p>Síguenos</p>
+              <div class="flex space-x-4">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-whatsapp"></i>
+                <i class="bi bi-tiktok"></i>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </footer>
+      
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+  

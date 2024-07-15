@@ -1,0 +1,28 @@
+.flex {
+    display: flex;
+    gap: 1rem; /* Similar to space-x-4 */
+    align-items: center; /* Vertical centering */
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  select, .custom-button {
+    width: 100%;
+    height: calc(1.25 * 2rem); /* Aumenta la altura en un 25% */
+    padding: 0.5rem; 
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  }
+  
+  
+  .custom-button {
+    background-color: gold;
+    text-align: center;
+  }
+  
+  .custom-width {
+    width: 10rem; /* Ajusta este tamaño según sea necesario */
+  }
+  

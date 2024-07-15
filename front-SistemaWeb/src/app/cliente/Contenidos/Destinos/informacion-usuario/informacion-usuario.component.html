@@ -1,0 +1,86 @@
+
+<body>
+
+    <app-header-component></app-header-component>
+
+    <div class="content">
+
+        <div class="bootstrap-wrapper">
+
+            <div class="container" style="display: flex;">
+                <div class="row" style="margin-top: 20px;">
+
+
+                    <div class="col-md-6 offset-md-5" id="contenedor">
+
+                        <mat-card style="padding: 30px;">
+                            <h1 class="" style="color: rgb(65, 115, 167); font-weight:bold ;">Pasajero</h1>
+                            <hr>
+                            
+                            <br>
+                            
+                            <form>
+                                <mat-form-field class="full-width2">
+                                    <mat-label>Tipo de documento</mat-label>
+                                    <mat-select [(ngModel)]="ventaPasaje.tipoDocumento" name="tipoDocumento" required>>
+                                        <mat-option value="DNI">DNI</mat-option>
+                                        <mat-option value="Carnet de extranjeria">Carnet de extranjeria</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                
+                                <mat-form-field class="full-width2">
+                                    <mat-label>Numero de documento</mat-label>
+                                    <input [(ngModel)]="ventaPasaje.numeroDocumento" name="numeroDocumento" required name="number" type="number" matInput placeholder="Digite su documento">
+                                    <mat-hint>Obligatorio</mat-hint>
+                                </mat-form-field>
+                
+                                <mat-form-field class="full-width2">
+                                    <mat-label>Nombres</mat-label>
+                                    <input [(ngModel)]="ventaPasaje.nombres" required name="nombre" matInput>
+                                </mat-form-field>
+                    
+                                <mat-form-field class="full-width2">
+                                    <mat-label>Apellidos</mat-label>
+                                    <input [(ngModel)]="ventaPasaje.apellidos" name="apellidos" required name = "apellido" matInput placeholder="Digite su apellido">
+                                </mat-form-field>
+                                
+                                <mat-form-field class="full-width2">
+                                    <mat-label>Fecha de nacimiento</mat-label>
+                                    <input required name = "apellido" type="date" matInput placeholder="Digite su apellido">
+                                </mat-form-field>
+
+                                <mat-form-field class="full-width2">
+                                    <mat-label>Género</mat-label>
+                                    <mat-select [(ngModel)]="ventaPasaje.genero" name="genero">
+                                        <mat-option value="M">Masculino</mat-option>
+                                        <mat-option value="F">Femenino</mat-option>
+                                    </mat-select>
+
+                                </mat-form-field>
+                            </form>
+                        </mat-card>
+                        
+                    </div>
+                </div>
+
+                <div class="container" style="width: 300px; margin-top: 20px;">
+                <div class="row">
+                    <mat-card style="height: 35vh;">
+                        <h2>Detalle de tarifa de viaje</h2>
+                        <p>NRO de Asiento: {{ selectedSeats }}</p> <!-- Mostrar el número de asiento -->
+                        <!-- <p>Total: 40</p> -->
+                        <button mat-raised-button color="primary" (click)="comprarPasaje()">Comprar</button>
+                    </mat-card>
+                </div>
+            </div>
+
+            </div>
+        
+   
+        </div>
+        
+    </div>
+
+    <app-footer-component></app-footer-component>
+
+</body>

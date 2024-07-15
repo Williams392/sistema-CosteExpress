@@ -1,0 +1,55 @@
+<app-header-component></app-header-component>
+
+<body>
+    <div class="content">
+        <br>
+
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="row mt20">
+                    <div class="col-md-6 offset-md-3">
+                        <mat-card style="padding: 20px;">
+                            <div class="container text-center">
+                                <img src="../../../../assets/img/log-out-2355227_640.png" alt="" width="100px" height="100px">
+                            </div>
+                            <div class="container">
+                                <h1 style="color: rgb(65, 115, 167); font-weight:bold ;">Ingresa a tu cuenta de Costeño Express</h1>
+                                <p style="font-size: 17px;">¿No tienes una cuenta?</p>
+                            </div>
+                            <a [routerLink]="'/signup'">
+                                <p>Registrese aqui</p>
+                            </a>
+                            <form action="" class="text-center">
+                                
+                                <mat-form-field class="full-width2"  appearance = "outline">
+                                    <!-- <mat-label>Usuario   </mat-label> -->
+                                    <input matInput >
+                                    <mat-hint>Usuario debe ser único</mat-hint>
+                                </mat-form-field>
+                                
+                                <mat-form-field class="full-width2"  appearance = "outline">
+                                    <!-- <mat-label>Contraseña  </mat-label> -->
+                                    <input required type = "password" matInput placeholder="">
+                                    <mat-hint>La contraseña debe ser valida</mat-hint>
+                                </mat-form-field>
+        
+                                <br><br>
+        
+                                <div class = "container text-center">
+                                    <button class="full-width2" style="padding: 30px;" mat-raised-button color="primary"
+                                    class="page-link" (click)="loginPAGINA()">Iniciar Sesión</button>
+                                    <!-- <button type="reset" style = "margin-left: 20px;" mat-raised-button color="accent">Cancelar</button> -->
+                                </div>
+
+                            </form>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <app-footer-component></app-footer-component>
+
+</body>
